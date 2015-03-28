@@ -26,3 +26,4 @@ TestEntity.save(function(error,doc){
         console.log(doc);
     }
 });
+

@@ -15,9 +15,9 @@ var TestSchema = new mongoose.Schema({
 var TestModel = db.model("test1", TestSchema );
 
 // 查询全部数据
-TestModel.find({}, function(error, docs) {
-    console.log(docs);
-});
+//TestModel.find({}, function(error, docs) {
+//    console.log(docs);
+//});
 
 //TestModel.find({ "name": "helloworld" }, function (error, docs) {
 //    if(error){
@@ -77,3 +77,43 @@ TestModel.find({}, function(error, docs) {
 //        console.log('Delete success!');
 //    }
 //});
+
+// 添加测试数据
+
+//TestModel.create([
+//    { name:"test1", age:20 },
+//    { name:"test2", age:30 },
+//    { name:"test3", age:24 },
+//    { name:"test4", age:18 },
+//    { name:"test5", age:60 },
+//    { name:"test6", age:50, email:"t6@qq.com" },
+//    { name:"test7", age:40, email:"t7@163.com" },
+//    { name:"test8", age:27 },
+//    { name:"test9", age:27, email:"t9@yeah.net" },
+//    { name:"test10",age:65 }
+//], function(error,docs) {
+//    if(error) {
+//        console.log(error);
+//    } else {
+//        console.log('save ok');
+//    }
+//});
+
+// 简单查询 过滤查询
+// 返回只包含一个键值name、age的所有记录
+//TestModel.find({},{name:1, email:1, age: 1, _id:0}, function(err,docs){
+//    //docs 查询结果集
+//    console.log(docs);
+//});
+
+// 只查询第一条
+//TestModel.findOne({ age: 27}, function (err, doc){
+//    // 查询符合age等于27的第一条数据
+//    console.log(doc);
+//});
+
+//但它只接收文档的_id作为参数，返回单个文档
+TestModel.findById('obj._id', function (err, doc){
+    //doc 查询结果文档
+    console.log(doc);
+});
