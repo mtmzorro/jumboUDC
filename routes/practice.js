@@ -4,9 +4,18 @@ var router = express.Router();
 //var user = require('../database/db').user;
 
 
-router.all("*", function(req, res, next) {
-    console.log(req.path);
-    console.log(req.host);
+//router.all("*", function(req, res, next) {
+//    console.log(req.path);
+//    console.log(req.host);
+//    next();
+//});
+
+// session
+router.use(function(req, res, next){
+    res.locals.user = req.session.user;
+    var err = req.session.error;
+    res.locals.message = '';
+    if (err) res.locals.message = '<div style="margin-bottom: 20px;color:red;">' + err + '</div>';
     next();
 });
 
@@ -80,5 +89,52 @@ router.get('/send', function(req, res, next) {
     //res.send(500); // Internal Server Error
 });
 
+/* render 和 redirect */
+// index
+router.get('/test', function(req, res, next) {
+    res.render('practice/index', { title: 'Express' });
+    // 重定向
+    //res.redirect("test/login");
+});
+
+// login
+router.get('/test/login', function(req, res, next) {
+    res.render('practice/login', { title: 'Express' });
+});
+
+// home
+router.get('/test/home',function(req,res, next){
+    if(req.session.user){
+        res.render('practice/home');
+    }else{
+        req.session.error = "请先登录"
+        res.redirect('/test/login');
+    }
+});
+
+
+/* login post */
+router.post('/test/login',function(req,res, next){
+    console.log("用户名称为：" + req.body.username);
+
+    var user={
+        username:'admin',
+        password:'admin'
+    };
+
+    if(req.body.username == user.username && req.body.password == user.password){
+        req.session.user = user;
+        res.send(200);
+    }else{
+        req.session.error = "用户名或密码不正确";
+        res.send(404);
+    }
+});
+
+router.get('/test/logout',function(req,res, next){
+    req.session.user = null;
+    req.session.error = null;
+    res.redirect('/test');
+});
 
 module.exports = router;
