@@ -48,10 +48,6 @@ router.get('/param/:name/', function(req, res, next) {
     console.log(req.param("name")); //Lenka
     res.send("使用req.param属性获取具有路由规则的参数对象值!:" + req.param("name"));
 
-    // 或者
-    console.log(req.param.name); //Lenka
-    res.send("使用req.param属性获取具有路由规则的参数对象值!:" + req.param.name);
-
 });
 
 /* params基本用法 路由规则 */

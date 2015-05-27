@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PSD!!!!!</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+
+    <div class="psd-content">
+        <div class="p-pic">
+            <% for(var i=0; i < psds.picUrl.length; i++) {%>
+            <div>
+                <img src="<%= psds.picUrl[i] %>" alt=""/>
+            </div>
+            <% } %>
+        </div>
+        <div class="p-link"><a href="<%= psds.cloudUrl %>">云盘下载链接</a></div>
+        <div class="p-user"><%= psds.owner %></div>
+        <div class="p-ext">上传时间：<%= psds.updataTime %></div>
+    </div>
+
+  </body>
+</html>
