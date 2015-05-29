@@ -11,8 +11,10 @@ router.get('/', function(req, res, next) {
 // PSD list
 router.get('/psd', psd.renderPsdList);
 
-// PSD 单品
-router.get('/psd/:psdId/', psd.renderPsdItem);
+// PSD 作品详情
+router.get('/psd/detail/:psdId/', psd.renderPsdItem);
 
+// PSD 个人分享作品
+router.get('/psd/member/:username', psd.renderPsdMember);
 
 module.exports = router;

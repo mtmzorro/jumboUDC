@@ -14,12 +14,12 @@
             <% for(var i=0; i < psds.length; i++) {%>
             <li class="pl-item">
                 <div class="p-pic">
-                    <a href="/psd/<%= psds[i]._id %>">
+                    <a href="/psd/detail/<%= psds[i]._id %>">
                         <img src="<%= psds[i].picUrl[0] %>" alt=""/>
                     </a>
                 </div>
                 <div class="p-link"><a href="<%= psds[i].cloudUrl %>">云盘下载链接</a></div>
-                <div class="p-user"><%= psds[i].owner %></div>
+                <div class="p-user"><a href="/psd/member/<%= psds[i].username %>"><%= psds[i].owner %></a></div>
                 <div class="p-ext">上传时间：<%= psds[i].updataTime %></div>
             </li>
             <% } %>

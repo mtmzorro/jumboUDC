@@ -24,6 +24,8 @@ exports.creatPsd = function (psd, callback) {
         cloudUrl: psd.cloudUrl,
         // 图片地址
         picUrl: psd.picUrl,
+        // 上传人 ID
+        username: psd.username,
         // 上传人
         owner: psd.owner
     });
@@ -48,8 +50,14 @@ exports.getAllPsdsByUpdataTime = function (sort, callback) {
 
 /**
  * [getPsdById 查找单个psd]
- * @param  {[number]} sort [排序 1为升序 -1为降序]
  */
 exports.getPsdById = function (psdId, callback) {
     Psd.findOne({ _id: psdId }, callback);
+};
+
+/**
+ * [getPsdByUser 查找单个psd]
+ */
+exports.getPsdByUsername = function (username, callback) {
+    Psd.findOne({ username: username }, callback);
 };

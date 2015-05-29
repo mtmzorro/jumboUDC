@@ -15,6 +15,8 @@ var PsdSchema = new Schema({
     cloudUrl: {type: String},
     // 图片地址
     picUrl: {type: Array},
+    // 上传人用户ID
+    username: {type: String},
     // 上传人
     owner: {type: String},
     // 点赞数

@@ -4,7 +4,8 @@
  * E-mail duqichao@jd.com
  * Update 2015/5/26
  */
-var Psd = require('../dao/psd');
+var dao = require('../dao');
+var Psd = dao.Psd;
 
 /**
  * 展示 psd 列表
@@ -45,3 +46,25 @@ exports.renderPsdItem = function (req, res) {
     });
 
 };
+
+/**
+ * 展示 psd 个人
+ */
+exports.renderPsdMember = function (req, res) {
+
+    var username = req.params.member;
+
+    Psd.getPsdByUsername(username, function (error, doc) {
+        if(error){
+            console.log(error);
+        }else{
+            console.log(doc.picUrl);
+            res.render('psd/item', {
+                title: 'psd!!!',
+                psds: doc
+            });
+        }
+    });
+
+};
+
