@@ -1,7 +1,7 @@
 /**
  * user.js
  * 操作 models/user
- * @author: zuoshilong@jd.com
+ * @author: mtmzorro
  * @date: 2015-5-26 18:43:31
  */
 
@@ -11,7 +11,6 @@ var User = models.User;
 /**
  * [getUsersByUsername 通过用户名单个查找 用户数据]
  * @param  {[type]} username [description]
- * @return {[type]}      [description]
  */
 exports.getUsersByName = function (username, callback) {
     User.findOne({ username: username }, callback);
@@ -20,7 +19,6 @@ exports.getUsersByName = function (username, callback) {
 /**
  * [getUsersByUsernames 通过用户名批量查找 用户数据]
  * @param  {[type]} usernames [description]
- * @return {[type]}      [description]
  */
 exports.getUsersByNames = function (usernames, callback) {
     if (usernames.length === 0) {
@@ -32,7 +30,6 @@ exports.getUsersByNames = function (usernames, callback) {
 /**
  * [creatUser 创建 用户数据]
  * @param  {[type]} user [description]
- * @return {[type]}      [description]
  */
 exports.creatUser = function (user, callback) {
     if (typeof user === 'undefined') {

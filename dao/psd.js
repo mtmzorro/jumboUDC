@@ -18,6 +18,7 @@ exports.creatPsd = function (psd, callback) {
         return callback(null, []);
     }
     newPsd = new Psd({
+        title: psd.title,
         // 分享ID
         id: psd.id,
         // cloud 云盘网盘地址

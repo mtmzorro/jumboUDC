@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>upload psd</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <script src="http://static.360buyimg.com/finance/common/lib/jquery/1.8.3/jquery.js"></script>
+  </head>
+  <body>
+    <h1>上传psd</h1>
+
+    <form id="formImg" action="/psd/upload" method="post" enctype="multipart/form-data">
+        <div>
+            <label for="">标题</label>
+            <input type="text" name="title"/>
+        </div>
+        <div>
+            <label for="">类型</label>
+            <selecte name="type">
+                <option value="1">消费金融</option>
+                <option value="2">移动端</option>
+            </selecte>
+        </div>
+        <div>
+            <label for="">网盘地址</label>
+            <input type="text" name="cloudUrl"/>
+        </div>
+        <div>
+            <label for="">图片1</label>
+            <input id="img1" type="file" name="img1"/>
+        </div>
+        <div>
+            <label for="">图片2</label>
+            <input id="img2" type="file" name="img2"/>
+        </div>
+        <div>
+            <input type="button" id="upload" onclick="uploadImg();" value="上传"/>
+        </div>
+    </form>
+
+
+    <script>
+        function uploadImg(){
+//            var img1 = $('#img1').val();
+//            var data = { "img1": img1};
+//            $.ajax({
+//                url:'/psd/upload',
+//                type:'POST',
+//                data:data,
+//                success:function(data,status){
+////                    if(status == 'success'){
+////                        location.href='home';
+////                    }
+//                },
+//                error:function(data,status,e){
+////                    if(status == "error"){
+////                        location.href='login';
+////                    }
+//                }
+//            });
+            $('#formImg').submit();
+        }
+    </script>
+
+  </body>
+</html>
