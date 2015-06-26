@@ -125,6 +125,8 @@ exports.uploadPsd = function (req, res) {
     var picUrl = [];
     //console.log(files)
 
+    var username = req.session.user.username;
+
     for(var i in files){
         picUrl.push('/uploads/psd/' + files[i].name);
     }
@@ -137,7 +139,7 @@ exports.uploadPsd = function (req, res) {
         // 图片地址
         picUrl: picUrl,
         // 上传人
-        username: 'admin'
+        username: username
     }, function(error, doc){
         if(error){
             console.log(error);

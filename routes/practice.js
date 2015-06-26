@@ -103,7 +103,7 @@ router.get('/test/home',function(req,res, next){
     if(req.session.user){
         res.render('practice/home');
     }else{
-        req.session.error = "请先登录"
+        req.session.error = "请先登录";
         res.redirect('/test/login');
     }
 });

@@ -8,6 +8,10 @@
   <body>
     <h1>上传psd</h1>
 
+    <h3><%= loginMsg %></h3>
+
+    <h3><%= user.nickname %> + <%= user.lastLoginTime %></h3>
+
     <form id="formImg" action="/psd/upload" method="post" enctype="multipart/form-data">
         <div>
             <label for="">标题</label>
