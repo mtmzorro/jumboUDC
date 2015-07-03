@@ -1,7 +1,5 @@
 
 var Psd = require('../../dao/psd');
-var models = require('../../models');
-var modelPsd = models.Psd;
 
 //// 创建psd
 //Psd.creatPsd({
@@ -14,9 +12,9 @@ var modelPsd = models.Psd;
 //        'http://img30.360buyimg.com/jr_image/jfs/t820/116/981152236/41541/947257f/556436a2N07c2cbf3.jpg',
 //        'http://img30.360buyimg.com/jr_image/jfs/t1558/98/214157089/31398/ed3d0780/55644728Nb6a3a55e.jpg'
 //    ],
-//    author: 'mtmzorro',
+//    username: 'admin',
 //    // 上传人
-//    user: '5591057144dc581c4be2f5db'
+//    owner: 'mtmzorro'
 //}, function(error, doc){
 //    if(error){
 //        console.log(error);
@@ -32,5 +30,3 @@ var modelPsd = models.Psd;
 //        console.log(doc);
 //    }
 //});
-var m = modelPsd;
-console.log(modelPsd.count())

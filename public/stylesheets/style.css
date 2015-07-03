@@ -1,0 +1,47 @@
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,address,big,cite,code,del,em,font,img,ins,small,strong,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend{margin:0;padding:0;}ol,ul{list-style:none;}:focus{outline:0;}a img{border:0;}img{vertical-align:middle;}table{empty-cells:show;}ins{text-decoration:none;}del{text-decoration:line-through;}em{font-style:normal;}
+button::-moz-focus-inner,
+input[type="reset"]::-moz-focus-inner,
+input[type="button"]::-moz-focus-inner,
+input[type="submit"]::-moz-focus-inner,
+input[type="file"]>input[type="button"]::-moz-focus-inner{border:none;padding:0;}
+
+.fl{float:left;}.fr{float:right;}.fn{float:none;}.al{text-align:left;}.ac{text-align:center;}.ar{text-align:right;}
+
+.clr{display:block;overflow:hidden;clear:both;height:0;line-height:0;font-size:0;}
+.clearfix:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix{display:inline-table;}
+.clearfix{display:block;}
+.clearfix{*height:1%; *min-height:1%;}
+.overflow{overflow:hidden;}
+
+
+.psd-list{
+    width: 990px;
+    margin: 0 auto;
+}
+
+.psd-list .pl-item{
+    float: left;
+    width: 300px;
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+.psd-list .pl-item .p-pic{
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+}
+.psd-list .pl-item .p-pic img{
+    width: 300px;
+    height: 300px;
+}
+
+.psd-content{
+    width: 990px;
+    margin: 0 auto;
+}
+
+.psd-content .p-pic img{
+    max-width: 990px;
+    height: auto;
+}

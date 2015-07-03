@@ -15,14 +15,10 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-
-/**
- * PSD 资源库
- */
 // PSD list
-router.get('/psd/', psd.renderPsdList);
+router.get('/psd', psd.renderPsdList);
 // PSD 作品详情
-router.get('/psd/detail/:psdId', psd.renderPsdItem);
+router.get('/psd/detail/:psdId/', psd.renderPsdItem);
 // PSD 个人分享作品
 router.get('/psd/member/:username', psd.renderPsdMember);
 // PSD 发布

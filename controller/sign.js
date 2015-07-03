@@ -30,7 +30,7 @@ exports.signIn = function (req, res) {
     var username = validator.trim(req.body.username);
     var password = validator.trim(req.body.password);
 
-    User.getUserByName(username, function(error, doc){
+    User.getUsersByName(username, function(error, doc){
         if (!error) {
 
             console.log(doc);
@@ -38,7 +38,7 @@ exports.signIn = function (req, res) {
             // 是否查找到用户
             if (!doc) {
                 req.session.loginMsg = "用户名不存在";
-                res.sendStatus(404);
+                res.send(404);
             }else{
 
                 // 用户名密码是否正确
@@ -51,10 +51,10 @@ exports.signIn = function (req, res) {
                         adminLevel: doc.adminLevel
                     };
                     req.session.loginMsg = "登陆成功";
-                    res.sendStatus(200);
+                    res.send(200);
                 }else{
                     req.session.loginMsg = "用户名或密码不正确";
-                    res.sendStatus(404);
+                    res.send(404);
                 }
 
             }
