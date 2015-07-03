@@ -1,0 +1,194 @@
+@charset "UTF-8";
+/** @file: main.scss @project: UDC 平台 @update: 2015-6-30 14:58:46 */
+html, body, div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, address, big, cite, code, del, em, font, img, ins, small, strong, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend { margin: 0; padding: 0; }
+
+ol, ul { list-style: none; }
+
+:focus { outline: 0; }
+
+a img { border: 0; }
+
+img { vertical-align: middle; }
+
+table { empty-cells: show; }
+
+ins { text-decoration: none; }
+
+del { text-decoration: line-through; }
+
+em { font-style: normal; }
+
+button::-moz-focus-inner, input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner { border: none; padding: 0; }
+
+.fl { float: left; }
+
+.fr { float: right; }
+
+.fn { float: none; }
+
+.al { text-align: left; }
+
+.ac { text-align: center; }
+
+.ar { text-align: right; }
+
+.clr { display: block; overflow: hidden; clear: both; height: 0; line-height: 0; font-size: 0; }
+
+.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+
+.clearfix { display: inline-table; }
+
+.clearfix { display: block; }
+
+.clearfix { *height: 1%; *min-height: 1%; }
+
+.overflow { overflow: hidden; }
+
+/*.m*/
+.m, .mt, .mc, .mb, .sm, .smt, .smc, .smb { overflow: hidden; zoom: 1; }
+
+.m, .sm { margin-bottom: 10px; }
+
+.mt, .smt { cursor: default; }
+
+.mt h2, .smt h3 { font-family: "microsoft yahei"; }
+
+.m .mt .extra a:link, .m .mt .extra a:visited, .sm .smt .extra a:link, .sm .smt .extra a:visited { color: #005EA7; }
+
+.form label, .form input, .form select, .form textarea, .form button, .form .label { float: left; font-size: 12px; }
+
+body { font: 12px/150% Arial,Verdana,"\5b8b\4f53"; color: #666; background: #fff; _background-image: url(about:blank); _background-attachment: fixed; }
+
+h1 { font: 20px "microsoft yahei","\5b8b\4f53"; }
+
+h2, h3 { font-size: 14px; }
+
+h4, h5, h6 { font-size: 12px; }
+
+a { color: #666; text-decoration: none; }
+
+a:hover { color: #E4393C; text-decoration: underline; }
+
+/*.w*/
+.w { width: 1200px; margin: 0 auto; }
+
+/** @file: common.scss @project: 京东收银台-公共组件层 @update: 2014-9-4 11:03:30 @note: 此文件为公共文件，修改后请在changeLog中注明 @changeLog:  2014-9-4: 创建文件 */
+/** css3lib\  thanks:  http://bourbon.io/ https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss https://github.com/marvin1023/sassCore/blob/master/core/_css3.scss */
+/** 全局配置 */
+body { font-family: 'Microsoft Yahei','\5FAE\8F6F\96C5\9ED1',Arial,'Hiragino Sans GB','\5B8B\4F53'; }
+
+/** layout 布局  */
+.mt5 { margin-top: 5px; }
+
+.mt10 { margin-top: 10px; }
+
+.mt15 { margin-top: 15px; }
+
+.mt20 { margin-top: 20px; }
+
+.mb5 { margin-bottom: 5px; }
+
+.mb10 { margin-bottom: 10px; }
+
+.mb15 { margin-bottom: 15px; }
+
+.mb20 { margin-bottom: 20px; }
+
+.mb30 { margin-bottom: 30px; }
+
+.ml5 { margin-left: 5px; }
+
+.ml10 { margin-left: 10px; }
+
+.ml15 { margin-left: 15px; }
+
+.ml20 { margin-left: 20px; }
+
+.mr5 { margin-right: 5px; }
+
+.mr10 { margin-right: 10px; }
+
+.mr15 { margin-right: 15px; }
+
+.mr20 { margin-right: 20px; }
+
+.pt5 { padding-top: 5px; }
+
+.pt10 { padding-top: 10px; }
+
+.pt15 { padding-top: 15px; }
+
+.pt20 { padding-top: 20px; }
+
+.pb5 { padding-bottom: 5px; }
+
+.pb10 { padding-bottom: 10px; }
+
+.pb15 { padding-bottom: 15px; }
+
+.pb20 { padding-bottom: 20px; }
+
+.pl5 { padding-left: 5px; }
+
+.pl10 { padding-left: 10px; }
+
+.pl15 { padding-left: 15px; }
+
+.pl20 { padding-left: 20px; }
+
+.pr5 { padding-right: 5px; }
+
+.pr10 { padding-right: 10px; }
+
+.pr15 { padding-right: 15px; }
+
+.pr20 { padding-right: 20px; }
+
+/** color 颜色 */
+.font-black { color: #666; }
+
+.font-gray { color: #999; }
+
+.font-bold { font-weight: bold; }
+
+a { color: #24252f; }
+
+a:hover { text-decoration: none; color: #24252f; }
+
+/** 状态 */
+.hide { display: none; }
+
+/** 头尾 */
+.header { background-color: #24252f; height: 72px; }
+.header .header-logo { float: left; width: 250px; overflow: hidden; padding-left: 10px; padding-top: 15px; margin-right: 100px; }
+.header .header-logo h1 { display: block; }
+.header .header-nav { float: left; width: 600px; padding-top: 13px; }
+.header .header-nav .nav-item { float: left; height: 44px; line-height: 44px; }
+.header .header-nav .nav-item a { display: block; padding: 0 20px; color: #86868a; font-size: 14px; }
+.header .header-nav .nav-item.current a { color: #fff; font-weight: bold; }
+.header .header-ext { float: right; padding-top: 15px; padding-right: 10px; }
+.header .header-ext .header-ext-link { color: #fff; display: inline-block; height: 44px; line-height: 44px; font-size: 14px; }
+
+/** 分页 */
+.ui-page { padding-top: 50px; }
+.ui-page .ui-page-wrap { height: 40px; }
+.ui-page .ui-page-left { float: left; }
+.ui-page .ui-page-right { float: right; }
+.ui-page .ui-page-item { float: left; display: block; height: 44px; line-height: 44px; padding: 0 18px; background-color: #eff2f5; text-align: center; margin-right: 12px; color: #24252f; font-weight: bold; font-size: 13px; border-radius: 4px; }
+.ui-page .ui-page-item.current { background-color: #24252f; color: #fff; }
+
+/** @file: common.scss @project: 京东收银台-公共组件层 @update: 2014-9-4 11:03:30 @note: 此文件为公共文件，修改后请在changeLog中注明 @changeLog:  2014-9-4: 创建文件 */
+/** css3lib\  thanks:  http://bourbon.io/ https://github.com/thomas-mcdonald/bootstrap-sass/blob/master/vendor/assets/stylesheets/bootstrap/_mixins.scss https://github.com/marvin1023/sassCore/blob/master/core/_css3.scss */
+.psd-container { padding-top: 50px; }
+
+.psd-list .psd-list-item { width: 280px; height: 305px; padding: 10px; border-bottom: 1px solid #f1f3f5; float: left; }
+.psd-list .psd-list-item .p-img { margin-bottom: 10px; }
+.psd-list .psd-list-item .p-img a { display: block; border: 1px solid #f1f3f5; }
+.psd-list .psd-list-item .p-name { height: 20px; line-height: 20px; margin-bottom: 8px; }
+.psd-list .psd-list-item .p-name a { font-size: 14px; color: #394a58; font-weight: bold; }
+.psd-list .psd-list-item .p-ext { height: 20px; line-height: 20px; margin-bottom: 8px; }
+.psd-list .psd-list-item .p-ext .p-ext-item { color: #9aabb8; }
+.psd-list .psd-list-item .p-author { height: 20px; line-height: 20px; }
+.psd-list .psd-list-item .p-author .p-author-avatar { margin-right: 5px; display: inline-block; width: 20px; height: 20px; vertical-align: top; }
+.psd-list .psd-list-item .p-author .p-author-avatar img { vertical-align: top; }
+.psd-list .psd-list-item .p-author .p-author-name { color: #9aabb8; vertical-align: top; }

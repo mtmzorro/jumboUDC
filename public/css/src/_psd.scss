@@ -1,0 +1,73 @@
+@charset "utf-8";
+/**
+ * @file: common.scss
+ * @project: 京东收银台-公共组件层
+ * @update: 2014-9-4 11:03:30
+ * @note: 此文件为公共文件，修改后请在changeLog中注明
+ * @changeLog: 
+ *  2014-9-4: 创建文件
+ */
+@import "_css3lib.scss";
+
+.psd-container{
+    padding-top: 50px;
+}
+
+// psd 列表
+.psd-list{
+
+    .psd-list-item{
+        width: 280px;
+        height: 305px;
+        padding: 10px;
+        border-bottom: 1px solid #f1f3f5;
+        float: left;
+
+        .p-img{
+            margin-bottom: 10px;
+            a{
+                display: block;
+                border: 1px solid #f1f3f5;
+            }
+        }
+        .p-name{
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 8px;
+            a{
+                font-size: 14px;
+                color: #394a58;
+                font-weight: bold;
+            }
+        }
+
+        .p-ext{
+            height: 20px;
+            line-height: 20px;
+            margin-bottom: 8px;
+            .p-ext-item{
+                color: #9aabb8;
+            }
+        }
+
+        .p-author{
+            height: 20px;
+            line-height: 20px;
+            .p-author-avatar{
+                margin-right: 5px;
+                display: inline-block;
+                width: 20px;
+                height: 20px;
+                vertical-align: top;
+                img{
+                    vertical-align: top;
+                }
+            }
+            .p-author-name{
+                color: #9aabb8;
+                vertical-align: top;
+            }
+        }
+    }
+
+}

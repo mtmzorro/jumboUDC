@@ -12,7 +12,7 @@ var User = models.User;
  * [getUsersByUsername 通过用户名单个查找 用户数据]
  * @param  {[type]} username [description]
  */
-exports.getUsersByName = function (username, callback) {
+exports.getUserByName = function (username, callback) {
     User.findOne({ username: username }, callback);
 };
 
@@ -43,7 +43,9 @@ exports.creatUser = function (user, callback) {
         // 用户管理级别 0 管理员， 1 普通用户
         adminLevel: user.adminLevel,
         // 用户昵称
-        nickname: user.nickname
+        nickname: user.nickname,
+        // 用户头像
+        avatar: user.avatar
     });
     newUser.save(callback);
 };
