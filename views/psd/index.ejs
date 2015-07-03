@@ -1,29 +1,134 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>PSD!!!!!</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <a href="/psd/publish">发布PSD</a>
-    <div class="psd-list">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <link rel="dns-prefetch" href="http://static.360buyimg.com" />
+    <link rel="dns-prefetch" href="http://img30.360buyimg.com" />
+    <title>UDC</title>
+    <link rel="icon" href="http://www.jd.com/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="/css/main.css"/>
 
-        <ul>
+</head>
+<body>
+
+<!--header-->
+<div class="header">
+    <div class="header-inner w clearfix">
+        <div class="header-logo">
+            <h1><img src="/css/i/logo.png" alt=""></h1>
+        </div>
+        <div class="header-nav">
+            <ul class="clearfix">
+                <li class="nav-item"><a href="">首页</a></li>
+                <li class="nav-item current"><a href="">素材库</a></li>
+                <li class="nav-item"><a href="">博文</a></li>
+                <li class="nav-item"><a href="">招聘</a></li>
+            </ul>
+        </div>
+        <div class="header-ext">
+            <a class="header-ext-link mr20" href="/signIn">登陆</a>
+            <a class="header-ext-link" href="">注册</a>
+        </div>
+    </div>
+</div>
+
+<!--header end-->
+
+<!--container-->
+<div class="psd-container w">
+
+
+    <!--list-->
+    <div class="psd-list">
+        <ul class="psd-list-wrap clearfix">
+
             <% for(var i=0; i < psds.length; i++) {%>
-            <li class="pl-item">
-                <div class="p-pic">
+            <li class="psd-list-item">
+                <div class="p-img">
                     <a href="/psd/detail/<%= psds[i]._id %>">
-                        <img src="<%= psds[i].picUrl[0] %>" alt=""/>
+                        <img width="278" height="208" src="<%= psds[i].picCover %>" alt="">
                     </a>
                 </div>
-                <div class="p-link"><a href="<%= psds[i].cloudUrl %>">云盘下载链接</a></div>
-                <div class="p-user"><a href="/psd/member/<%= psds[i].username %>"><%= psds[i].owner %></a></div>
-                <div class="p-ext">上传时间：<%= psds[i].updataTime %></div>
+                <div class="p-name">
+                    <a href="/psd/detail/<%= psds[i]._id %>"><%= psds[i].title %></a>
+                </div>
+                <div class="p-ext">
+                    <span class="p-ext-item p-ext-view">1233</span>
+                    <span class="p-ext-item p-ext-download">223</span>
+                </div>
+                <div class="p-author">
+                    <a href="/psd/member/<%= psds[i].username %>">
+                    <span class="p-author-avatar">
+                        <img src="../images/avatar-1.png">
+                    </span>
+                    <span class="p-author-name">
+                        <%= psds[i].author %>
+                    </span>
+                    </a>
+                </div>
             </li>
             <% } %>
+
         </ul>
     </div>
-  </body>
+    <!--list end-->
+    <!--page-->
+    <div class="ui-page">
+        <div class="ui-page-wrap clearfix">
+            <div class="ui-page-left">
+
+                <% if (pageIndex - 3 > 0) { %>
+                <a class="ui-page-item" href="/psd?page=1">1...</a>
+                <% } %>
+                <% if (pageIndex - 2 > 0) { %>
+                <a class="ui-page-item" href="/psd?page=<%= pageIndex - 2 %>"><%= pageIndex - 2 %></a>
+                <% } %>
+                <% if (pageIndex - 1 > 0) { %>
+                <a class="ui-page-item" href="/psd?page=<%= pageIndex - 1 %>"><%= pageIndex - 1 %></a>
+                <% } %>
+
+                <a class="ui-page-item current" href="/psd?page=<%= pageIndex %>"><%= pageIndex %></a>
+
+                <% if (pageIndex + 1 <= pageCount) { %>
+                <a class="ui-page-item" href="/psd?page=<%= pageIndex + 1 %>"><%= pageIndex + 1 %></a>
+                <% } %>
+                <% if (pageIndex + 2 <= pageCount) { %>
+                <a class="ui-page-item" href="/psd?page=<%= pageIndex + 2 %>"><%= pageIndex + 2 %></a>
+                <% } %>
+                <% if (pageIndex + 3 <= pageCount) { %>
+                <a class="ui-page-item" href="/psd?page=<%= pageCount %>">...<%= pageCount %></a>
+                <% } %>
+
+            </div>
+            <div class="ui-page-right">
+                <% if (pageIndex == 1) { %>
+                <a class="ui-page-item ui-page-prev disable" href="javascript:;">&lt;</a>
+                <% } else{%>
+                <a class="ui-page-item ui-page-prev" href="/psd?page=<%= pageIndex - 1 %>">&lt;</a>
+                <% } %>
+
+                <% if (pageIndex == pageCount) { %>
+                <a class="ui-page-item ui-page-next disable" href="javascript:;">下一页&nbsp;&gt;</a>
+                <% } else{%>
+                <a class="ui-page-item ui-page-next" href="/psd?page=<%= pageIndex + 1 %>">下一页&nbsp;&gt;</a>
+                <% } %>
+            </div>
+        </div>
+    </div>
+    <!--page end-->
+
+</div>
+<!--container end-->
+
+<!-- footer -->
+<div class="footer">
+
+</div>
+
+<!-- footer end -->
+
+<script src="http://static.360buyimg.com/finance/??common/lib/jquery/1.8.3/jquery.js,base/1.1.0/js/base.js"></script>
+
+</body>
 </html>
